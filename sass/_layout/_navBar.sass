@@ -1,0 +1,65 @@
+// svg style
+.svgImg
+    width: 1.5rem
+    height: 1.5rem
+    fill: #fff
+    &_nav
+        width: 2rem
+        fill: #fff
+        height: 2rem
+        transition: .3s all
+        &:hover
+            transform: scale(1.2)
+// navBar style
+.navbar
+    background: linear-gradient(0deg, #24242400 15.05%, #4d4d4daf 85.34%) !important
+    color: #fff
+    position: fixed-top
+    width: 100%
+    z-index: 11
+    flex-direction: row-reverse
+    +media-sptb
+        position: fixed
+        background: linear-gradient(0deg, #242424e1 15.05%, #4d4d4daf 85.34%) !important
+    .searchWrap
+        position: absolute
+        display: flex
+        border: 1px solid #ced4da
+        border-radius: .25rem
+        width: 20%
+        +media-sptb
+            position: unset
+            width: 70%
+        .search
+            width: 100%
+            display: block
+            padding: 5px
+            font-size: 1rem
+            color: #495057
+        button
+            background-color: #fec4e6
+            padding: 5px
+    .navbar-collapse
+        justify-content: center
+        gap: 30px
+        .navbar-nav
+            justify-content: center
+            align-items: center
+            li
+                position: relative
+                padding: 25px 0px
+                +media-sptb
+                    font-size: 18px
+                &:last-child
+                    .nav-link
+                        border: 0px
+                .nav-link
+                    border-right: 1px solid #ffc5e7
+                    padding: 0 40px
+                    color: #ffff
+                    &:hover
+                        color: #ffff
+                        position: relative
+                        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7),0 0 10px rgba(255, 255, 255, 0.6),0 0 15px rgba(255, 255, 255, 0.5),
+                    +media-sptb
+                        border: 0px

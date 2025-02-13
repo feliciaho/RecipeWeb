@@ -1,0 +1,108 @@
+section
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    overflow-x: hidden
+    padding: 80px 0 0 0
+    // common style
+    h1.secTitle
+        font-size: clamp(2rem, 3vw, 4rem)
+        margin: 3%
+    h2.projectTitle
+        font-size: clamp(1.5rem, 1.5vw, 3rem)
+        color: #ffc5e7
+        +media-narrow
+            font-size: 1.1rem
+    span
+        border: unset
+        border-left: 1px solid #ffc5e7
+        padding: 0 10px
+        margin: 0 10px
+        font-size: clamp(1rem, 1vw, 2rem)
+    p
+        font-size: clamp(1rem, 1vw, 2rem)
+        text-align: start
+        color: #ffff
+    label
+        text-align: center
+        color: #ffff
+        padding: 5px 20px
+        font-size: 1rem
+        border: 1px solid #ffff
+        border-radius: 5px
+        +media-narrow
+            display: none
+        &.seemore
+            border: unset
+            color: #000000
+            background-color: #ffc5e7
+    // project
+    .projectWrap
+        width: 80%
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+        align-items: start
+        justify-items: center
+        gap: 20px
+        max-width: 1300px
+        +media-sptb
+            width: 90%
+        +media-narrow
+            width: 90%
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr))
+            gap: 10px
+        .project
+            width: 300px
+            display: flex
+            color: #ffc5e7
+            justify-content: center
+            flex-wrap: wrap
+            +media-narrow
+                width: 140px
+            // text
+            .secText
+                width: 100%
+                text-align: start
+                display: flex
+                flex-direction: column
+                flex-wrap: wrap
+            .skillWrap
+                margin: 10px 0
+                display: flex
+                gap: 10px
+                flex-wrap: wrap
+            // banner
+            .banner
+                position: relative
+                overflow: hidden
+                border-radius: 20px
+                z-index: 2
+                margin: 2% 0
+                a
+                    z-index: 3
+                    cursor: pointer
+                    img
+                        transition: .2s linear
+                        object-fit: contain
+                        width: 100%
+                .mask
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background: rgba(0, 0, 0, 0.7)
+                    color: white
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    opacity: 0
+                    transition: 0.3s linear
+                    font-size: 24px
+                    pointer-events: none
+                &:hover
+                    .mask
+                        opacity: 1
+                    img
+                        transform: scale(1.1)
