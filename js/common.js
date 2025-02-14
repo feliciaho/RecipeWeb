@@ -38,7 +38,7 @@ const App = Vue.createApp({
       return this.dataStore;
     },
     totalPage() {
-      return Math.ceil(this.dataStore.length / 8);
+      return Math.ceil(this.filterData.length / 8);
     },
     // nowPageStore 是一個新的變數 儲存用過濾過後的array
     // 並且再依據數量分頁
@@ -96,7 +96,7 @@ App.component("recipeCard", {
           <li class="page-item" :class="{'disabled': currentPage === 1}">
             <a href="#" @click.prevent="switchPage(currentPage-1)">Previous</a>
           </li>
-          <li class="page-item" v-for="(page , key) in totalPage" :key="'page'+ key" :class= "{'active': currentPage === page }">
+          <li class="page-item" v-for="(page , key) in totalPage" :key="'page'+ key" :class= "{'active': currentPage === page }" >
             <a href="#" @click.prevent="switchPage(page)">{{ page }}</a>
           </li>
           <li class="page-item" :class="{'disabled': currentPage === totalPage }">
