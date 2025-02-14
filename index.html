@@ -31,7 +31,7 @@
       <!-- navBar -->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="searchWrap">
-          <input type="text" class="search" id="search" placeholder="search" />
+          <input type="text" class="search" id="search" placeholder="search" v-model="cacheSearch"/>
           <button name="button" type="submit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,19 +85,7 @@
           <recipe-card :recipe="nowPageStore"></recipe-card>
         </div>
       </section>
-      <div class="pageNavigation">
-        <ul class="pagination">
-          <li class="page-item" :class="{'disabled': currentPage === 1}">
-            <a href="#" @click.prevent="switchPage(currentPage-1)">Previous</a>
-          </li>
-          <li class="page-item" v-for="(page , key) in totalPage" :key="'page'+ key" :class= "{'active': currentPage === page }">
-            <a href="#" @click.prevent="switchPage(page)">{{ page }}</a>
-          </li>
-          <li class="page-item" :class="{'disabled': currentPage === totalPage }">
-            <a href="#" @click.prevent="switchPage(currentPage+1)">Next</a>
-          </li>
-        </ul>
-      </div>
+      <pagination :total-page="totalPage" :current-page="currentPage" @emit-switch-page="switchPage"></pagination>
       <!-- footer -->
       <footer>
         <ul class="footerImg">
