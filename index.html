@@ -31,7 +31,7 @@
       <!-- navBar -->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="searchWrap">
-          <input type="text" class="search" id="search" placeholder="search" v-model="searchData"/>
+          <input type="text" class="search" id="search" placeholder="search" v-model="searchData" @keyup.enter="searchFunc"/>
           <button name="button" type="submit" @click="searchFunc">
             <svg
               xmlns="http://www.w3.org/2000/svg"
