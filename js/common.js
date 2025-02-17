@@ -22,6 +22,7 @@ const App = Vue.createApp({
       this.currentPage = page;
     },
     searchFunc(){
+      this.currentPage = 1;
       this.cacheSearch = this.searchData;
     },
   },
@@ -97,13 +98,13 @@ App.component("recipeCard", {
     template: `      
       <div class="pageNavigation">
         <ul class="pagination">
-          <li class="page-item" :class="{'disabled': currentPage === 1}">
+          <li class="page-item" :class="{'disabled': currentPage === 1 || totalPage === 0 }">
             <a href="#" @click.prevent="switchPage(currentPage-1)">Previous</a>
           </li>
           <li class="page-item" v-for="(page , key) in totalPage" :key="'page'+ key" :class= "{'active': currentPage === page }" >
             <a href="#" @click.prevent="switchPage(page)">{{ page }}</a>
           </li>
-          <li class="page-item" :class="{'disabled': currentPage === totalPage }">
+          <li class="page-item" :class="{'disabled': currentPage === totalPage || totalPage === 0}">
             <a href="#" @click.prevent="switchPage(currentPage+1)">Next</a>
           </li>
         </ul>
