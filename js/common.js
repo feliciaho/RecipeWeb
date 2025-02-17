@@ -5,6 +5,7 @@ const App = Vue.createApp({
       dataStore: [],
       currentPage: 1,
       cacheSearch: "",
+      searchData: "",
     };
   },
   methods: {
@@ -19,6 +20,9 @@ const App = Vue.createApp({
     },
     switchPage(page) {
       this.currentPage = page;
+    },
+    searchFunc(){
+      this.cacheSearch = this.searchData;
     },
   },
   computed: {
