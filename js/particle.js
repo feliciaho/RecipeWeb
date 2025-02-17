@@ -1,59 +1,59 @@
 tsParticles.load({
-id: "tsparticles",
-options: {
-    interactivity: {
-    events: {
-        onClick: {
-        enable: true,
-        mode: "push",
+    id: "tsparticles",
+    options: {
+        interactivity: {
+        events: {
+            onClick: {
+            enable: true,
+            mode: "push",
+            },
+            onHover: {
+            enable: true,
+            mode: "bubble",
+            },
         },
-        onHover: {
-        enable: true,
-        mode: "bubble",
+        modes: {
+            bubble: {
+            distance: 200,
+            duration: 2,
+            opacity: 0,
+            size: 0,
+            speed: 3,
+            },
+            repulse: {
+            distance: 400,
+            duration: 0.4,
+            },
         },
-    },
-    modes: {
-        bubble: {
-        distance: 200,
-        duration: 2,
-        opacity: 0,
-        size: 0,
-        speed: 3,
         },
-        repulse: {
-        distance: 400,
-        duration: 0.4,
+        particles: {
+        color: { value: "#ffffff" },
+        move: {
+            direction: "none",
+            enable: true,
+            outModes: "out",
+            random: true,
+            speed: 0.3,
         },
-    },
-    },
-    particles: {
-    color: { value: "#ffffff" },
-    move: {
-        direction: "none",
-        enable: true,
-        outModes: "out",
-        random: true,
-        speed: 0.3,
-    },
-    number: {
-        density: {
-        enable: true,
+        number: {
+            density: {
+            enable: true,
+            },
+            value: 600,
         },
-        value: 600,
-    },
-    opacity: {
-        animation: {
-        enable: true,
-        speed: 5,
+        opacity: {
+            animation: {
+            enable: true,
+            speed: 5,
+            },
+            value: { min: 0.3, max: 0.6 },
         },
-        value: { min: 0.3, max: 0.6 },
-    },
-    shape: {
-        type: "circle",
-    },
-    size: {
-        value: 1,
-    },
-    },
+        shape: {
+            type: "circle",
+        },
+        size: {
+            value: 1,
+        },
+        },
 },
 });
